@@ -4,7 +4,7 @@ import { DataContext } from '../context'
 
 export const Water = () => {
 
-const {liters, numberOfGlasses} = useContext(DataContext)
+const {liters, numberOfGlasses, toggleWater} = useContext(DataContext)
 
 
     return (
@@ -15,7 +15,7 @@ const {liters, numberOfGlasses} = useContext(DataContext)
             <ul className="water-glasses">
             {numberOfGlasses.map((value, index) => {
                 return(
-                    <li key={index}><button>{value}</button></li>
+                    <li key={index}><button onClick={() => toggleWater(index)}>{value}</button></li>
                 )
             })}
             </ul>
