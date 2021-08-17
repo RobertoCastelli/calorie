@@ -14,8 +14,8 @@ function App() {
       <div className="container">
         <div className="content">
           <Title />
-          <Recap />
           <BMI />
+          <Recap />
           <Food />
           <Water />
         </div>

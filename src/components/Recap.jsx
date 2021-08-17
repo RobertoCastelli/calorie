@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export const Recap = () => {
-    return (
-        <div>
-            <img src="https://via.placeholder.com/150" alt="recap" />
-        </div>
-    )
-}
+  return (
+    <div>
+      <img src="https://via.placeholder.com/300x200" alt="recap" />
+    </div>
+  );
+};
