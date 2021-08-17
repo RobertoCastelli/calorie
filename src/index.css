@@ -15,6 +15,7 @@ body {
   min-height: 100vh;
   max-width: 768px;
   text-align: center;
+  margin: auto;
 }
 .content {
   flex-grow: 1;
@@ -30,7 +31,35 @@ ul {
 li {
   padding: 1rem;
 }
-.emptyGlass {
+.water-glass-image {
+  width: 2rem;
   cursor: pointer;
-  width: 3rem;
+}
+.water-counter-incomplete {
+  font-size: 2rem;
+  color: brown;
+}
+.water-counter-complete {
+  font-size: 2rem;
+  color: cadetblue;
+}
+
+fieldset {
+  border-radius: 10px;
+}
+.food-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1rem;
+}
+.food-breakfast,
+.food-lunch,
+.food-dinner,
+.food-snack {
+  width: 100px;
+  margin: 0.5rem;
+}
+.food-button {
+  cursor: pointer;
 }

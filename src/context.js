@@ -1,51 +1,38 @@
-import React, { useState, useEffect } from 'react'
-import emptyGlass from './images/emptyglass.png'
+import React, { useState } from "react";
+import { glasses } from "./variables/data";
+// IMAGES
+import fullglass from "./images/fullglass.png";
+import emptyglass from "./images/emptyglass.png";
+
 // CONTEXT
-export const DataContext = React.createContext()
+export const DataContext = React.createContext();
 
 const ContextProvider = ({ children }) => {
-    // STATE
-    const [liters, setLiters] = useState(0)
-    
-    
-    const createGlasses = Array.from({ length: 8 }, () => ({
+  // STATE
+  const [liters, setLiters] = useState(0);
 
-    state: false,
-    src: emptyGlass
-  }));
-  console.log(createGlasses)
+  // TOGGLE WATER
+  const toggleWater = (id) => {
+    glasses.map((glass, index) => {
+      if (id === index && glass.state === false) {
+        setLiters(liters + 0.25);
+        glass.state = true;
+        glass.src = fullglass;
+      } else if (id === index && glass.state === true) {
+        setLiters(liters - 0.25);
+        glass.state = false;
+        glass.src = emptyglass;
+      }
+      return glass; // <-<< check return
+    });
+  };
 
-    // // CREATE n GLASSES
-    // const createGlasses = (numberOfGlasses) => setNumberOfGlasses(Array(numberOfGlasses).fill('+'))
-    // useEffect(() => {
-    //     createGlasses(8) //<--<< change number of glasses
-    // }, [])
+  // RENDER
+  return (
+    <DataContext.Provider value={{ liters, glasses, toggleWater }}>
+      {children}
+    </DataContext.Provider>
+  );
+};
 
-    // // TOGGLE WATER
-    // const toggleWater = (id) => {
-    //     let temp = [...numberOfGlasses]
-    //     temp.map((_, index) => {
-    //         if (id === index) {
-    //             if (temp[index] === '+') {
-    //                 temp[index] = '-'
-    //                 setLiters(liters + 0.25)
-    //             } else {
-    //                 temp[index] = '+'
-    //                 setLiters(liters - 0.25)
-    //             }
-    //         }
-    //     }
-    //     )
-    //     setNumberOfGlasses(temp)
-    // }
-
-
-    // RENDER
-    return (
-        <DataContext.Provider value={{ liters, createGlasses }}>
-            {children}
-        </DataContext.Provider>
-    )
-}
-
-export default ContextProvider
+export default ContextProvider;

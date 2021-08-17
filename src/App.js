@@ -5,6 +5,8 @@ import { Footer } from "./components/Footer";
 import { Recap } from "./components/Recap";
 import { Title } from "./components/Title";
 import { Water } from "./components/Water";
+import { Food } from "./components/Food";
+import { BMI } from "./components/BMI";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <div className="content">
           <Title />
           <Recap />
+          <BMI />
+          <Food />
           <Water />
         </div>
         <Footer />
