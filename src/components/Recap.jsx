@@ -1,25 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DataContext } from "../context";
 
 export const Recap = () => {
+  const { kcal, values } = useContext(DataContext);
   return (
     <div className="recap-wrapper">
       <h3>RECAP</h3>
       <div className="recap-content">
         <div className="recap-chart">CHART</div>
         <div className="recap-consumed">
-          consumed <span>0</span>
+          consumed <span>{values.consumed} </span>
         </div>
         <div className="recap-remaining">
-          remaining <span>0</span>
+          remaining <span>{kcal - values.consumed}</span>
         </div>
         <div className="recap-carboidrati">
-          carbs <span>0</span>
+          carbs <span>{values.carbs}</span>
         </div>
         <div className="recap-proteine">
-          proteins <span>0</span>
+          proteins <span>{values.proteins}</span>
         </div>
         <div className="recap-grassi">
-          fat <span>0</span>
+          fat <span>{values.fat}</span>
         </div>
       </div>
     </div>

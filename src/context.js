@@ -11,6 +11,13 @@ const ContextProvider = ({ children }) => {
   // STATE
   const [liters, setLiters] = useState(0);
   const [kcal, setKcal] = useState(1800);
+  const [values, setValues] = useState({
+    consumed: 0,
+    remaining: 0,
+    carbs: 0,
+    proteins: 0,
+    fat: 0,
+  });
 
   // TOGGLE WATER
   const toggleWater = (id) => {
@@ -37,6 +44,8 @@ const ContextProvider = ({ children }) => {
         toggleWater,
         kcal,
         setKcal,
+        values,
+        setValues,
       }}
     >
       {children}
