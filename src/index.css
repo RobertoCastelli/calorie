@@ -94,11 +94,8 @@ li {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
-    "bmi consumed remaining"
+    "consumed . remaining"
     "carboidrati proteine grassi";
-}
-.recap-bmi {
-  grid: bmi;
 }
 .recap-consumed {
   grid-area: consumed;
