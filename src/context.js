@@ -13,7 +13,6 @@ const ContextProvider = ({ children }) => {
   const [kcal, setKcal] = useState(1800);
   const [values, setValues] = useState({
     consumed: 0,
-    remaining: 0,
     carbs: 0,
     proteins: 0,
     fat: 0,
