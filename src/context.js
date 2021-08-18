@@ -10,6 +10,13 @@ export const DataContext = React.createContext();
 const ContextProvider = ({ children }) => {
   // STATE
   const [liters, setLiters] = useState(0);
+  const [values, setValues] = useState({ height: 0, weight: 0 });
+
+  // HANDLE SUBMIT BMI
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(values.height, values.weight);
+  };
 
   // TOGGLE WATER
   const toggleWater = (id) => {
@@ -29,7 +36,16 @@ const ContextProvider = ({ children }) => {
 
   // RENDER
   return (
-    <DataContext.Provider value={{ liters, glasses, toggleWater }}>
+    <DataContext.Provider
+      value={{
+        liters,
+        glasses,
+        values,
+        setValues,
+        toggleWater,
+        handleSubmit,
+      }}
+    >
       {children}
     </DataContext.Provider>
   );
