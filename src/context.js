@@ -32,7 +32,7 @@ const ContextProvider = ({ children }) => {
         const data = await res.json()
         console.log(data.items[0].name)
       } catch (error) {
-        setErrorMessage(`oops! --> ${error.message}`)
+        setErrorMessage(`oops! ➟ ${error.message}`)
       }
       setIsLoading(false)
     }

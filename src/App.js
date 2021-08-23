@@ -7,8 +7,7 @@ import { Title } from "./components/Title"
 import { Water } from "./components/Water"
 import { Food } from "./components/Food"
 import { Kcal } from "./components/Kcal"
-import { Loading } from "./components/Loading"
-import { ErrorMessage } from "./components/ErrorMessage"
+import { Detail } from "./components/Detail"
 
 function App() {
   return (
@@ -16,12 +15,11 @@ function App() {
       <div className="container">
         <div className="content">
           <Title />
+          <Water />
           <Kcal />
           <Recap />
-          <Water />
           <Food />
-          <Loading />
-          <ErrorMessage />
+          <Detail />
         </div>
         <Footer />
       </div>

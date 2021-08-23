@@ -1,30 +1,24 @@
-import React from "react";
+import React from "react"
+import { ErrorMessage } from "./ErrorMessage"
+import { Loading } from "./Loading"
 
 export const Food = () => {
   return (
-    <div className="food-wrapper">
+    <fieldset className="food-wrapper">
+      <legend>
+        <h3>FOOD</h3>
+      </legend>
       <div className="food-content">
-        <fieldset className="food-breakfast">
-          <legend> BREAKFAST</legend>
-          <button className="food-button"> + </button>
-          <div className="food-cal">0 Kcal</div>
-        </fieldset>
-        <fieldset className="food-lunch">
-          <legend>LUNCH</legend>
-          <button className="food-button"> + </button>
-          <div className="food-cal">0 Kcal</div>
-        </fieldset>
-        <fieldset className="food-dinner">
-          <legend>DINNER</legend>
-          <button className="food-button"> + </button>
-          <div className="food-cal">0 Kcal</div>
-        </fieldset>
-        <fieldset className="food-snack">
-          <legend>SNACK</legend>
-          <button className="food-button"> + </button>
-          <div className="food-cal">0 Kcal</div>
-        </fieldset>
+        <input className="food-search" type="text" placeholder="search food" />
+        <ErrorMessage />
+        <Loading />
+        <div className="food-buttons">
+          <button className="food-breakfast">BREAKFAST</button>
+          <button className="food-lunch">LUNCH</button>
+          <button className="food-dinner">DINNER</button>
+          <button className="food-snacks">SNACKS</button>
+        </div>
       </div>
-    </div>
-  );
-};
+    </fieldset>
+  )
+}

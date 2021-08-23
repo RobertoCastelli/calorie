@@ -5,14 +5,15 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-size: 0.8rem;
+  color: #333;
+  letter-spacing: 0.1rem;
+  font-family: "ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #333;
-  background-color: #f4f4f4;
+  background-color: white;
 }
+
 /* CONTENXT */
 .container {
   display: flex;
@@ -25,78 +26,42 @@ body {
 .content {
   flex-grow: 1;
 }
-
 button {
+  cursor: pointer;
+}
+button:active {
+  transform: translateY(1px);
+}
+fieldset {
+  border-radius: 0.5rem;
+  background-color: #f4f4f4;
+}
+
+.kcal-less,
+.kcal-more {
   border: none;
   color: cadetblue;
   font-size: 2rem;
-  cursor: pointer;
   margin: 1rem;
 }
-button:active {
+.kcal-less:active,
+.kcal-less:active {
   transform: scale(1.1);
 }
 
-/* FOOD */
-fieldset {
-  border-radius: 0.5rem;
-  width: 300px;
-  border: 1px solid #333;
+/* KCAL */
+.kcal-wrapper {
+  margin: 0.5rem auto;
+  max-width: 300px;
 }
-.food-wrapper {
+.kcal-content {
+  align-items: center;
+
   display: flex;
   justify-content: center;
-  margin: 0.5rem auto;
 }
-.food-content {
-  display: grid;
-  place-items: center;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-
-  width: 300px;
-}
-.food-breakfast,
-.food-lunch,
-.food-dinner,
-.food-snack {
-  width: 100px;
-  margin: 0.5rem;
-}
-.food-button {
-  cursor: pointer;
-}
-
-/* WATER */
-ul {
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0.5rem 0;
-  padding: 0;
-}
-li {
-  padding: 0.3rem 0.7rem;
-}
-.water-wrapper {
-  margin: 0.5rem auto;
-}
-.water-content {
-  margin: 1rem;
-}
-.water-glass-image {
-  width: 2.5rem;
-  cursor: pointer;
-}
-.water-counter-incomplete {
+.kcal-less {
   color: brown;
-}
-.water-counter-complete {
-  color: cadetblue;
-}
-.water-counter-complete::after {
-  content: " - completed!";
 }
 
 /* RECAP */
@@ -129,17 +94,81 @@ li {
   grid-area: grassi;
 }
 
-.kcal-wrapper {
+/* WATER */
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0.5rem 0;
+  padding: 0;
+}
+li {
+  padding: 0.3rem 0.7rem;
+}
+.water-wrapper {
+  margin: 0.5rem auto;
+  max-width: 300px;
+}
+.water-content {
+  margin: 1rem;
+}
+.water-glass-image {
+  width: 2.5rem;
+  cursor: pointer;
+}
+.water-counter-incomplete {
+  color: brown;
+}
+.water-counter-complete {
+  color: cadetblue;
+}
+.water-counter-complete::after {
+  content: " - completed!";
+}
+
+/* FOOD */
+.food-wrapper {
+  max-width: 300px;
+  margin: auto;
+}
+.food-content {
+  margin: 1rem;
+}
+.food-search {
+  border: none;
+  border-bottom: 1px solid cadetblue;
+  color: cadetblue;
+  padding: 0.5rem;
+  width: 100%;
+  height: 50px;
+}
+::placeholder {
+  color: cadetblue;
+}
+.food-buttons {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem;
+}
+.food-breakfast,
+.food-lunch,
+.food-dinner,
+.food-snacks {
+  border: 1px solid cadetblue;
+  background-color: white;
+  color: cadetblue;
+  height: 50px;
+}
+
+/* DETAIL */
+.detail-wrapper {
+  max-width: 300px;
   margin: 0.5rem auto;
 }
-.kcal-content {
-  align-items: center;
-
-  display: flex;
-  justify-content: center;
-}
-.kcal-less {
-  color: brown;
+.detail-content {
+  margin: 1rem;
 }
 
 /* LAODING & ERROR MESSAGE */
@@ -147,4 +176,5 @@ li {
 .loading-message {
   color: brown;
   font-style: italic;
+  margin: 1rem;
 }
