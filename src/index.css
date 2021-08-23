@@ -25,6 +25,7 @@ body {
 fieldset {
   border-radius: 10px;
   width: 300px;
+  border: 1px solid #333;
 }
 .food-wrapper {
   display: flex;
@@ -74,6 +75,10 @@ li {
   font-size: 2rem;
   color: cadetblue;
 }
+.water-counter-complete::after {
+  content: " - completed!";
+  font-size: 1.5rem;
+}
 
 /* BMI */
 .bmi-content {
@@ -114,4 +119,11 @@ li {
 }
 .recap-grassi {
   grid-area: grassi;
+}
+
+/* LAODING & ERROR MESSAGE */
+.error-message,
+.loading-message {
+  color: brown;
+  font-style: italic;
 }

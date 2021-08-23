@@ -1,4 +1,7 @@
-import emptyglass from "../images/emptyglass.png";
+import emptyglass from "../images/emptyglass.png"
+
+export const apiKey = "x0f5tMoUp+9CcKuvBiKmVg==sUP8AqpeRAw5pnqX"
+export const url = "https://api.calorieninjas.com/v1/nutrition?query="
 
 export const glasses = [
   {
@@ -41,4 +44,4 @@ export const glasses = [
     state: false,
     src: emptyglass,
   },
-];
+]

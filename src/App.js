@@ -1,12 +1,14 @@
 // CONTEXT
-import ContextProvider from "./context";
+import ContextProvider from "./context"
 // COMPONENTS
-import { Footer } from "./components/Footer";
-import { Recap } from "./components/Recap";
-import { Title } from "./components/Title";
-import { Water } from "./components/Water";
-import { Food } from "./components/Food";
-import { Kcal } from "./components/Kcal";
+import { Footer } from "./components/Footer"
+import { Recap } from "./components/Recap"
+import { Title } from "./components/Title"
+import { Water } from "./components/Water"
+import { Food } from "./components/Food"
+import { Kcal } from "./components/Kcal"
+import { Loading } from "./components/Loading"
+import { ErrorMessage } from "./components/ErrorMessage"
 
 function App() {
   return (
@@ -17,12 +19,14 @@ function App() {
           <Kcal />
           <Recap />
           <Food />
+          <Loading />
+          <ErrorMessage />
           <Water />
         </div>
         <Footer />
       </div>
     </ContextProvider>
-  );
+  )
 }
 
-export default App;
+export default App
