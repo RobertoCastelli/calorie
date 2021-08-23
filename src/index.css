@@ -1,34 +1,117 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #333;
   background-color: #f4f4f4;
 }
-
+/* CONTENXT */
 .container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   max-width: 768px;
-  padding: 1rem;
+  text-align: center;
+  margin: auto;
 }
 .content {
   flex-grow: 1;
 }
 
+/* FOOD */
+fieldset {
+  border-radius: 10px;
+  width: 300px;
+}
+.food-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.food-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: 1rem;
+  width: 300px;
+}
+.food-breakfast,
+.food-lunch,
+.food-dinner,
+.food-snack {
+  width: 100px;
+  margin: 0.5rem;
+}
+.food-button {
+  cursor: pointer;
+}
+
+/* WATER */
 ul {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 0;
 }
 li {
   padding: 1rem;
 }
-button {
+.water-wrapper {
+  margin: auto;
+}
+.water-glass-image {
+  width: 2rem;
   cursor: pointer;
+}
+.water-counter-incomplete {
+  font-size: 2rem;
+  color: brown;
+}
+.water-counter-complete {
+  font-size: 2rem;
+  color: cadetblue;
+}
+
+/* BMI */
+.bmi-content {
+  margin: 1rem;
+}
+.bmi-weight,
+.bmi-height {
+  width: 50px;
+  margin: 0.5rem;
+  border: none;
+  border-bottom: 1px solid #333;
+}
+
+/* RECAP */
+.recap-wrapper {
+  margin: auto;
+  max-width: 300px;
+}
+.recap-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "consumed . remaining"
+    "carboidrati proteine grassi";
+}
+.recap-consumed {
+  grid-area: consumed;
+}
+.recap-remaining {
+  grid-area: remaining;
+}
+.recap-carboidrati {
+  grid-area: carboidrati;
+}
+.recap-proteine {
+  grid-area: proteine;
+}
+.recap-grassi {
+  grid-area: grassi;
 }

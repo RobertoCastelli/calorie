@@ -1,24 +1,36 @@
-import React, { useContext } from 'react'
-import { DataContext } from '../context'
-
+import React, { useContext } from "react";
+import { DataContext } from "../context";
 
 export const Water = () => {
+  const { liters, glasses, toggleWater } = useContext(DataContext);
 
-const {liters, numberOfGlasses, toggleWater} = useContext(DataContext)
-
-
-    return (
-        <div className="water-wrapper">
-            <h3>WATER</h3>
-            <div>objective: 2,00 liters</div>
-            <div className="water-counter">{liters} L</div>
-            <ul className="water-glasses">
-            {numberOfGlasses.map((value, index) => {
-                return(
-                    <li key={index}><button onClick={() => toggleWater(index)}>{value}</button></li>
-                )
-            })}
-            </ul>
-        </div>
-    )
-}
+  return (
+    <fieldset className="water-wrapper">
+      <legend>
+        <h3>WATER</h3>
+      </legend>
+      <div>objective: 2,00 liters</div>
+      <div
+        className={
+          liters < 2 ? "water-counter-incomplete" : "water-counter-complete"
+        }
+      >
+        {liters} L
+      </div>
+      <ul className="water-glasses">
+        {glasses.map((glass, index) => {
+          return (
+            <li key={index}>
+              <img
+                className="water-glass-image"
+                src={glass.src}
+                alt="glasses"
+                onClick={() => toggleWater(index)}
+              ></img>
+            </li>
+          );
+        })}
+      </ul>
+    </fieldset>
+  );
+};
