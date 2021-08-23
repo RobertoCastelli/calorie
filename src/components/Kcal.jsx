@@ -1,18 +1,23 @@
-import React, { useContext } from "react";
-import { DataContext } from "../context";
+import React, { useContext } from "react"
+import { DataContext } from "../context"
 
 export const Kcal = () => {
-  const { kcal, setKcal } = useContext(DataContext);
+  const { kcal, setKcal } = useContext(DataContext)
 
   return (
-    <div className="kcal-wrapper">
-      <div className="kcal-total">{kcal} Kcal/day</div>
-      <button className="kcal-more" onClick={() => setKcal(kcal + 10)}>
-        +
-      </button>
-      <button className="kcal-less" onClick={() => setKcal(kcal - 10)}>
-        -
-      </button>
-    </div>
-  );
-};
+    <fieldset className="kcal-wrapper">
+      <legend>
+        <h3>KCAL / DAY</h3>
+      </legend>
+      <div className="kcal-content">
+        <button className="kcal-more" onClick={() => setKcal(kcal + 10)}>
+          +
+        </button>
+        <div className="kcal-total">{kcal}</div>
+        <button className="kcal-less" onClick={() => setKcal(kcal - 10)}>
+          -
+        </button>
+      </div>
+    </fieldset>
+  )
+}

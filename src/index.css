@@ -1,5 +1,10 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -21,21 +26,34 @@ body {
   flex-grow: 1;
 }
 
+button {
+  border: none;
+  color: cadetblue;
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 1rem;
+}
+button:active {
+  transform: scale(1.1);
+}
+
 /* FOOD */
 fieldset {
-  border-radius: 10px;
+  border-radius: 0.5rem;
   width: 300px;
   border: 1px solid #333;
 }
 .food-wrapper {
   display: flex;
   justify-content: center;
+  margin: 0.5rem auto;
 }
 .food-content {
   display: grid;
+  place-items: center;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  margin: 1rem;
+
   width: 300px;
 }
 .food-breakfast,
@@ -55,49 +73,39 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0.5rem 0;
   padding: 0;
 }
 li {
-  padding: 1rem;
+  padding: 0.3rem 0.7rem;
 }
 .water-wrapper {
-  margin: auto;
+  margin: 0.5rem auto;
+}
+.water-content {
+  margin: 1rem;
 }
 .water-glass-image {
-  width: 2rem;
+  width: 2.5rem;
   cursor: pointer;
 }
 .water-counter-incomplete {
-  font-size: 2rem;
   color: brown;
 }
 .water-counter-complete {
-  font-size: 2rem;
   color: cadetblue;
 }
 .water-counter-complete::after {
   content: " - completed!";
-  font-size: 1.5rem;
-}
-
-/* BMI */
-.bmi-content {
-  margin: 1rem;
-}
-.bmi-weight,
-.bmi-height {
-  width: 50px;
-  margin: 0.5rem;
-  border: none;
-  border-bottom: 1px solid #333;
 }
 
 /* RECAP */
 .recap-wrapper {
-  margin: auto;
+  margin: 0.5rem auto;
   max-width: 300px;
 }
 .recap-content {
+  margin: 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -119,6 +127,19 @@ li {
 }
 .recap-grassi {
   grid-area: grassi;
+}
+
+.kcal-wrapper {
+  margin: 0.5rem auto;
+}
+.kcal-content {
+  align-items: center;
+
+  display: flex;
+  justify-content: center;
+}
+.kcal-less {
+  color: brown;
 }
 
 /* LAODING & ERROR MESSAGE */

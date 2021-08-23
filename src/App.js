@@ -18,10 +18,10 @@ function App() {
           <Title />
           <Kcal />
           <Recap />
+          <Water />
           <Food />
           <Loading />
           <ErrorMessage />
-          <Water />
         </div>
         <Footer />
       </div>
