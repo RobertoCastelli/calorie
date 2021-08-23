@@ -4,8 +4,10 @@ import { DataContext } from "../context";
 export const Recap = () => {
   const { kcal, values } = useContext(DataContext);
   return (
-    <div className="recap-wrapper">
-      <h3>RECAP</h3>
+    <fieldset className="recap-wrapper">
+      <legend>
+        <h3>RECAP</h3>
+      </legend>
       <div className="recap-content">
         <div className="recap-chart">CHART</div>
         <div className="recap-consumed">
@@ -24,6 +26,6 @@ export const Recap = () => {
           fat <span>{values.fat}</span>
         </div>
       </div>
-    </div>
+    </fieldset>
   );
 };

@@ -34,9 +34,8 @@ fieldset {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-
-  width: 300px;
   margin: 1rem;
+  width: 300px;
 }
 .food-breakfast,
 .food-lunch,
@@ -89,6 +88,10 @@ li {
 }
 
 /* RECAP */
+.recap-wrapper {
+  margin: auto;
+  max-width: 300px;
+}
 .recap-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
