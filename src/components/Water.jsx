@@ -21,7 +21,7 @@ export const Water = () => {
         <ul className="water-glasses">
           {glasses.map((glass, index) => {
             return (
-              <li key={index}>
+              <li className="water-glass-li" key={index}>
                 <img
                   className="water-glass-image"
                   src={glass.src}

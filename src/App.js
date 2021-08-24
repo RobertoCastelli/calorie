@@ -6,7 +6,6 @@ import { Recap } from "./components/Recap"
 import { Title } from "./components/Title"
 import { Water } from "./components/Water"
 import { Food } from "./components/Food"
-import { Kcal } from "./components/Kcal"
 import { Detail } from "./components/Detail"
 
 function App() {
@@ -15,9 +14,8 @@ function App() {
       <div className="container">
         <div className="content">
           <Title />
-          <Water />
-          <Kcal />
           <Recap />
+          <Water />
           <Food />
           <Detail />
         </div>

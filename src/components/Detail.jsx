@@ -8,16 +8,36 @@ export const Detail = () => {
       </legend>
       <div className="detail-content">
         <div>
-          BREAKFAST <span>total</span>
+          BREAKFAST ➟ <span>100</span> kcal
+          <ul>
+            <li>uno</li>
+            <li>due</li>
+            <li>tre</li>
+          </ul>
         </div>
         <div>
-          LUNCH <span>total</span>
+          LUNCH ➟ <span>100</span> kcal
+          <ul>
+            <li>uno</li>
+            <li>due</li>
+            <li>tre</li>
+          </ul>
         </div>
         <div>
-          DINNER <span>total</span>
+          DINNER ➟ <span>100</span> kcal
+          <ul>
+            <li>uno</li>
+            <li>due</li>
+            <li>tre</li>
+          </ul>
         </div>
         <div>
-          SNAKCS <span>total</span>
+          SNACKS ➟ <span>100</span> kcal
+          <ul>
+            <li>uno</li>
+            <li>due</li>
+            <li>tre</li>
+          </ul>
         </div>
       </div>
     </fieldset>

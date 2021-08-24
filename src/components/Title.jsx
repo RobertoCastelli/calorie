@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react"
+import fatboy from "../images/fatboy.jpg"
 
 export const Title = () => {
-    return (
-        <header>
-            <h1>React Fat</h1>
-        </header>
-    )
+  return (
+    <header>
+      <h1>REACT</h1>
+      <img className="title-image" src={fatboy} alt="fatboy" />
+      <h1>FAT</h1>
+    </header>
+  )
 }

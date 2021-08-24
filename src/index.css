@@ -36,34 +36,16 @@ fieldset {
   border-radius: 0.5rem;
   background-color: #f4f4f4;
 }
-
-.kcal-less,
-.kcal-more {
-  border: none;
-  color: cadetblue;
-  font-size: 2rem;
-  margin: 1rem;
-}
-.kcal-less:active,
-.kcal-less:active {
-  transform: scale(1.1);
-}
-
-/* KCAL */
-.kcal-wrapper {
-  margin: 0.5rem auto;
-  max-width: 300px;
-}
-.kcal-content {
-  align-items: center;
-
+/* TITLE */
+header {
   display: flex;
+  align-items: center;
   justify-content: center;
+  color: cadetblue;
 }
-.kcal-less {
-  color: brown;
+.title-image {
+  width: 100px;
 }
-
 /* RECAP */
 .recap-wrapper {
   margin: 0.5rem auto;
@@ -72,30 +54,62 @@ fieldset {
 .recap-content {
   margin: 1rem;
   display: grid;
+  align-items: center;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 50px);
   grid-template-areas:
+    "kcal-less kcal kcal-more"
+    "bar bar bar"
     "consumed . remaining"
     "carboidrati proteine grassi";
 }
 .recap-consumed {
   grid-area: consumed;
+  display: grid;
 }
 .recap-remaining {
   grid-area: remaining;
+  display: grid;
 }
 .recap-carboidrati {
   grid-area: carboidrati;
+  display: grid;
 }
 .recap-proteine {
   grid-area: proteine;
+  display: grid;
 }
 .recap-grassi {
   grid-area: grassi;
+  display: grid;
+}
+.recap-bar {
+  grid-area: bar;
+  justify-self: center;
+  width: 90%;
+}
+/* KCAL */
+.kcal-content {
+  display: flex;
+  align-items: center;
+}
+.kcal-less {
+  grid-area: kcal-less;
+  color: brown;
+}
+.kcal-more {
+  grid-area: kcal-more;
+  color: cadetblue;
+}
+.kcal-less,
+.kcal-more {
+  border: 1px solid cadetblue;
+  background-color: white;
+  font-size: 2rem;
 }
 
 /* WATER */
-ul {
+.water-glasses {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
@@ -103,7 +117,7 @@ ul {
   margin: 0.5rem 0;
   padding: 0;
 }
-li {
+.water-glass-li {
   padding: 0.3rem 0.7rem;
 }
 .water-wrapper {
@@ -119,9 +133,11 @@ li {
 }
 .water-counter-incomplete {
   color: brown;
+  margin: 0.5rem;
 }
 .water-counter-complete {
   color: cadetblue;
+  margin: 0.5rem;
 }
 .water-counter-complete::after {
   content: " - completed!";
@@ -169,6 +185,9 @@ li {
 }
 .detail-content {
   margin: 1rem;
+  display: grid;
+  row-gap: 1rem;
+  text-align: left;
 }
 
 /* LAODING & ERROR MESSAGE */
