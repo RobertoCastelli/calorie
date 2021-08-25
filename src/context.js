@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 // VARIABLES
 import { glasses, url, apiKey } from "./variables/data"
 // IMAGES
@@ -11,7 +11,7 @@ const ContextProvider = ({ children }) => {
   // STATE
   const [liters, setLiters] = useState(0)
   const [kcal, setKcal] = useState(1800)
-  const [query, setQuery] = useState(null)
+  const [query, setQuery] = useState("tomato")
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState(null)
   const [values, setValues] = useState({
@@ -22,23 +22,27 @@ const ContextProvider = ({ children }) => {
   })
 
   // FETCH FOOD
-  useEffect(() => {
-    const fetchFood = async () => {
-      try {
-        setIsLoading(true)
-        const res = await fetch(`${url} + ${query}`, {
-          headers: { "X-Api-Key": `${apiKey}` },
-        })
-        const data = await res.json()
-        console.log(data.items[0].name)
-      } catch (error) {
-        query !== null && setErrorMessage(`oops! ➟ ${error.message}`)
-      }
-
-      setIsLoading(false)
+  const fetchFood = async () => {
+    try {
+      setIsLoading(true)
+      const res = await fetch(`${url} + ${query}`, {
+        headers: { "X-Api-Key": `${apiKey}` },
+      })
+      const data = await res.json()
+      console.log(data.items[0]) // <-<< delete this
+    } catch (error) {
+      query !== null && setErrorMessage(`oops! ➟ ${error.message}`)
     }
+    setIsLoading(false)
+  }
+
+  // SUBMIT FOOD
+  const handleSubmit = (e) => {
+    e.preventDefault()
     fetchFood()
-  }, [query])
+    console.log(e.target.name)
+    console.log(query)
+  }
 
   // TOGGLE WATER
   const toggleWater = (id) => {
@@ -52,7 +56,7 @@ const ContextProvider = ({ children }) => {
         glass.state = false
         glass.src = emptyglass
       }
-      return glass // <-<< check return
+      return glass // <-<< check this
     })
   }
 
@@ -69,6 +73,9 @@ const ContextProvider = ({ children }) => {
         setValues,
         isLoading,
         errorMessage,
+        query,
+        setQuery,
+        handleSubmit,
       }}
     >
       {children}
