@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 // VARIABLES
 import { glasses, url, apiKey } from "./variables/data"
 // IMAGES
@@ -11,7 +11,9 @@ const ContextProvider = ({ children }) => {
   // STATE
   const [liters, setLiters] = useState(0)
   const [kcal, setKcal] = useState(1800)
-  const [query, setQuery] = useState("tomato")
+  const [query, setQuery] = useState("")
+  const [queryData, setQueryData] = useState([])
+  const [breakfast, setBreakfast] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState(null)
   const [values, setValues] = useState({
@@ -22,26 +24,30 @@ const ContextProvider = ({ children }) => {
   })
 
   // FETCH FOOD
-  const fetchFood = async () => {
-    try {
-      setIsLoading(true)
-      const res = await fetch(`${url} + ${query}`, {
-        headers: { "X-Api-Key": `${apiKey}` },
-      })
-      const data = await res.json()
-      console.log(data.items[0]) // <-<< delete this
-    } catch (error) {
-      query !== null && setErrorMessage(`oops! ➟ ${error.message}`)
+  useEffect(() => {
+    const fetchFood = async () => {
+      try {
+        const res = await fetch(`${url} + ${query}`, {
+          headers: { "X-Api-Key": `${apiKey}` },
+        })
+        const data = await res.json()
+        setQueryData(data.items[0])
+      } catch (error) {
+        query !== null && setErrorMessage(`oops! ➟ ${error.message}`)
+      }
     }
-    setIsLoading(false)
-  }
+    fetchFood()
+  }, [query])
 
-  // SUBMIT FOOD
+  // SEARCH FOOD
   const handleSubmit = (e) => {
     e.preventDefault()
-    fetchFood()
-    console.log(e.target.name)
-    console.log(query)
+    let temp = [...breakfast, queryData]
+    setBreakfast(temp)
+    /* 
+    console.log(`selected button: ${e.target.name}`) // <-<< delete this
+    */
+    console.log(queryData) // <-<< delete this
   }
 
   // TOGGLE WATER
@@ -76,6 +82,7 @@ const ContextProvider = ({ children }) => {
         query,
         setQuery,
         handleSubmit,
+        breakfast,
       }}
     >
       {children}

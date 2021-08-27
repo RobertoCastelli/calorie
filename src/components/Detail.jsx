@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useContext } from "react"
+import { DataContext } from "../context"
 
 export const Detail = () => {
+  const { breakfast } = useContext(DataContext)
   return (
     <fieldset className="detail-wrapper">
       <legend>
@@ -11,9 +13,15 @@ export const Detail = () => {
           BREAKFAST ➟ <span>100</span> kcal
         </div>
         <ul>
-          <li>uno</li>
-          <li>due</li>
-          <li>tre</li>
+          {breakfast.map((food, id) => {
+            return (
+              food && (
+                <li key={id}>
+                  {food.name}: {food.serving_size_g} g - {food.calories} kcal
+                </li>
+              )
+            )
+          })}
         </ul>
 
         <div className="detail-title">

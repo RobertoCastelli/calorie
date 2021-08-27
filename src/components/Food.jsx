@@ -13,7 +13,7 @@ export const Food = () => {
       <legend>
         <h3>FOOD</h3>
       </legend>
-      <form className="food-content">
+      <div className="food-content">
         <input
           className="food-search"
           type="text"
@@ -36,7 +36,7 @@ export const Food = () => {
           <button className="food-dinner">DINNER</button>
           <button className="food-snacks">SNACKS</button>
         </div>
-      </form>
+      </div>
     </fieldset>
   )
 }
